@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="breadcrumb">
+        <a href="#">🏠 Home</a> &gt; <a href="#">Account</a> &gt; <span>Login</span>
+    </div>
+
+    <div class="container">
+        <!--New Customer-->
+        <div class="box">
+            <h2>New Customer</h2>
+            <p><strong>Register Account</strong></p>
+            <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
+            <button class="btn continue" onclick="toggleForm()">Continue</button>
+        </div>
+
+        <!-- Returning Customer -->
+        <div class="box">
+            <h2>Returning Customer</h2>
+            <p><strong>I am a returning customer</strong></p>
+
+            <form id="loginForm">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email" required>
+
+                <label>Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    <span class="toggle-password" onclick="togglePassword()">👁</span>
+                </div>
+
+                <a href="#" class="forgot">Forgotten Password?</a>
+                <button type="submit" class="btn login">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
