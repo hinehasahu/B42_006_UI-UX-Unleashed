@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #4ca1af, #2c3e50);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            color: #2c3e50;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .back-btn {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background: #4ca1af;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .back-btn:hover {
+            background: #3b8890;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header" id="thankYouMessage"><i class="fas fa-check-circle"></i> Thank You!</div>
+        <p>Thank you for contacting us! We'll respond as soon as possible.</p>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Go Back</a>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get("name");
+
+        if (name) {
+            document.getElementById("thankYouMessage").innerHTML = `<i class="fas fa-check-circle"></i> Thank you, ${name}! Your message has been sent.`;
+        }
+    </script>
+</body>
+</html>
