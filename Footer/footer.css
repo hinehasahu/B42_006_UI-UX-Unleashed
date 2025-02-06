@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+
+}
+footer {
+    background-color: #303030;
+    color: white;
+    height: fit-content;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 18px;
+    margin-top: 505px;
+}
+#ftbdy {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+#ftbdy .th {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#ftbdy .td {
+    cursor: pointer;
+}
+#ftbdy .td:hover {
+    color: aquamarine;
+}
