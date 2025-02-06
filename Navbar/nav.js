@@ -4,9 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Example: Toggle Account Dropdown (Dummy Implementation)
     document.querySelector('.account').addEventListener('click', function() {
-        alert("Account options will be shown here.");
+        // alert("Account options will be shown here.");
     });
 
+    document.querySelector('.contact').addEventListener('click', function() {
+        window.location.href = `../ContactPage/ContactPage.html`
+        // alert("Account options will be shown here.");
+    });
+    
     // Example: Cart Alert
     document.querySelector('.cart-summary button').addEventListener('click', function() {
         alert("Your shopping cart is empty.");
