@@ -87,3 +87,24 @@ body {
     padding: 3px 7px;
     border-radius: 10px;
 }
+
+.account {
+    cursor: pointer;
+}
+.account>div {
+    position: absolute;
+    display: none;
+    width: 140px;
+    border-radius: 10px;
+    background-color: rgba(246, 242, 235, 0.734);
+    padding: 5px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.account>div>p {
+    margin: 0;
+    padding: 2px 10px;
+}
+.account>div>p:hover {
+    color: rgb(115, 43, 71);
+    background-color: rgba(201, 212, 215, 0.495);
+}
