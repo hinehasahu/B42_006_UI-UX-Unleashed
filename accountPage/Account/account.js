@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     document.querySelector(".logo").addEventListener("click",()=>{
-        window.location.href = `../../LandingPage/HomePage.html`
+        window.location.href = `../../LandingPage/index.html`
     })
 
 });

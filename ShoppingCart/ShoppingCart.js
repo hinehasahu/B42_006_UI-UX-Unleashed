@@ -112,7 +112,7 @@
 
     function continueShopping() {
         alert("Continuing shopping...");
-        window.location.href = "../LandingPage/HomePage.html";
+        window.location.href = "../LandingPage/index.html";
     }
 
     // populateDropdowns();
