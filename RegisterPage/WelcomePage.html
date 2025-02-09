@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="RegisterPage.css">
+
+<body>
+    <div class="container">
+        <h1 id="welcomeMessage">Welcome!</h1>
+        <button class="back-btn" onclick="goBack()">Back to Home Page</button>
+    </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let name = getQueryParam("name");
+            if (name) {
+                document.getElementById("welcomeMessage").innerText = `Welcome, ${name}! `;
+            }
+        });
+
+        function goBack() {
+            window.location.href = "../LandingPage/HomePage.html";
+        }
+    </script>
+</body>
+</html>

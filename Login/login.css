@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    /* padding: 20px; */
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #2575fc;
+}
+
+.container {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 350px;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.btn {
+    background: #2575fc;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.continue {
+    background: #28a745;
+}
+
+input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.password-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    flex: 1;
+}
+
+.toggle-password {
+    cursor: pointer;
+    padding: 8px;
+    background: #eee;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.forgot {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #2575fc;
+}

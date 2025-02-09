@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="ContactPage.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">📞 Contact Us</div>
+
+        <div class="info-box">
+            <p><i class="fas fa-store"></i> <strong>OpenCart Store</strong></p>
+            <p><i class="fas fa-map-marker-alt"></i> MASAI SCHOOL, City, Country</p>
+            <p><i class="fas fa-phone"></i> <strong>Phone:</strong>9325812244</p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> support@OpenCart.com</p>
+        </div>
+
+        <form id="contactForm" action="#" method="post">
+            <div class="form-group">
+                <label for="name">* Your Name</label>
+                <i class="fas fa-user input-icon"></i>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">* E-Mail Address</label>
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="enquiry">* Your Message</label>
+                <i class="fas fa-comment input-icon"></i>
+                <textarea id="enquiry" name="enquiry" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let enquiry = document.getElementById("enquiry").value;
+
+            if (name === "" || email === "" || enquiry === "") {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            // Redirect to thank you page with name as query parameter
+            window.location.href = "ContactPage2.html?name=" + encodeURIComponent(name);
+        });
+    </script>
+</body>
+</html>

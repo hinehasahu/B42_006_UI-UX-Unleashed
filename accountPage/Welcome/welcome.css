@@ -1,0 +1,44 @@
+body {
+    background-color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+main {
+    display: flex;
+}
+main>div {
+    padding: 10px 20px;
+}
+#left {
+    width: 70%;
+}
+
+#ryt {
+    border: 1px ridge gray;
+    padding: 0;
+    margin: 30px 0;
+    width: 30%;
+}
+#ryt>div {
+    border-bottom: 1px ridge gray;
+    padding: 10px;
+}
+
+h1 {
+    font-weight: 100;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+#left a {
+    text-decoration: none;
+    padding: 4px;
+}
+#left button {
+    padding: 8px 12px;
+    height: fit-content;
+    background-color: #1f99c7;
+    border: 2px ridge rgba(139, 131, 131, 0.34);
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    float: right;
+}
