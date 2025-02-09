@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Your Store</title>
   <meta name="description" content="My Store"/>
+  <link rel="stylesheet" href="../sort/sort.css">
   <link rel="stylesheet" href="../Navbar/nav.css">
   <link rel="stylesheet" href="../Footer/footer.css">
   <link rel="stylesheet" href="Home.css">
@@ -18,7 +19,7 @@
 <nav>
   <header>
     <div class="top-bar">
-        <span class="currency"> ₹<span id="currency"></span> Currency</span>
+        <span class="currency"> ₹<span id="currency"></span>Currency</span>
         <span class="contact">📞 6360639208</span>
         <span class="account">👤 My Account</span>
         <span class="wishlist">❤️ Wish List</span>
@@ -28,10 +29,10 @@
     
     <div class="main-nav">
         <div class="logo">
-            <img src="https://demo.opencart.com./image/catalog/opencart-logo.png" alt="Opencart Logo">
+            <img src="https://demo.opencart.com./image/catalog/opencart-logo.png" alt="Opencart Logo"  id="logoimg">
         </div>
         <div class="search-bar">
-            <input type="text" placeholder="Search">
+            <input type="text" placeholder="Search" id="gotosearch">
             <button>🔍</button>
         </div>
         <div class="cart-summary">
@@ -54,6 +55,7 @@
 </header>
 
 </nav>
+<!-- <div id="container"></div> -->
 
 <!-- Main Section -->
 <!-- Image Carousel -->
@@ -214,6 +216,8 @@
       const scrollAmount = 270;  // Adjust scroll amount based on box width
       scrollContainer.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
+
+    
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -221,3 +225,4 @@
 </html>
 <script src="../Navbar/nav.js"></script>
 <script src="../Footer/footer.js"></script>
+<script src="../sort/sort.js"></script>

@@ -1,14 +1,13 @@
 let Objarr = [];
-
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 (async function () {
     try {
         let res = await fetch("https://opencart-e92fb-default-rtdb.firebaseio.com/products.json")
         let resp = await res.json();
         let obj = Object.entries(resp);
         Objarr = [...obj]
-        console.log(Objarr);
+        // console.log(Objarr);
         display(Objarr);
-
     }
     catch (error) {
         console.log(error)
@@ -17,10 +16,12 @@ let Objarr = [];
 })();
 
 let searchWords = document.getElementById("search");
+
 searchWords.addEventListener("input", searchItems);
 
 function searchItems() {
     const sItem = searchWords.value.toLowerCase();
+    // console.log(sItem.length)
     let searchedItems = [];
 
     Objarr.forEach(([id, post]) => {
@@ -33,10 +34,19 @@ function searchItems() {
 
             )
             
-    });
+        });
         searchedItems = searchedItems.concat(filteredItems);
+        // console.log(searchedItems.length)
+        
     });
 
+    setTimeout(()=>{
+        if(searchedItems.length<1){
+            alert("No Data Found")
+        }
+    },2000)
+    
+    // console.log(searchedItems)
     displaySorted(searchedItems);
 }
 
@@ -44,51 +54,82 @@ function searchItems() {
 function displaySorted(arr){
     document.getElementById("container").innerHTML = "";
     arr.forEach((pos) => {
+        
         let card = document.createElement("div");
         card.innerHTML = `
-    
-    <h2>${pos.amount}<h2>
-    <h2>${pos.brand}<h2>
-    <h3>${pos.category}</h3>
-    <h3>${pos.availability}</h3>
-    <h3>${pos.product_code}</h3>
-    <div id="images">
-    <img src=${pos.img2}>
-    <img src=${pos.img1}>
-    <img src=${pos.img3}>
-    <img src=${pos.img4}>
-    <img src=${pos.main_img}>
-    </div>`
+        <div id="images">
+        <img src=${pos.main_img} class="img-fluid">
+        </div>
+        <h2 class="txt brandname">${pos.brand}</h2>
+        <h6 class="txt">Price: ${pos.amount}</h6>
+        <p class="txt">Category: ${pos.category}</p>
+        <p class="txt">Availability: ${pos.availability}</p>
+        <p class="txt">Product code: ${pos.product_code}</p>
+        <div class="action-buttons">
+          <button title="Add to Cart"><i class="fas fa-cart-plus"></i></button>
+          <button title="Remove"><i class="fas fa-trash-alt"></i></button>
+          <button title="Like"><i class="fas fa-heart"></i></button>
+        </div>
+        `
 
+        // console.log("display Sorted:",card)
         document.getElementById("container").append(card)
 
     })
 }
 
 
-// function display(arr) {
-//     document.getElementById("container").innerHTML = "";
-//     arr.forEach(([id, post]) => {
-//         post.forEach((pos) => {
-//             let card = document.createElement("div");
-//             card.innerHTML = `
-        
-//         <h2>${pos.amount}<h2>
-//         <h2>${pos.brand}<h2>
-//         <h3>${pos.category}</h3>
-//         <h3>${pos.availability}</h3>
-//         <h3>${pos.product_code}</h3>
-//         <div id="images">
-//         <img src=${pos.img2}>
-//         <img src=${pos.img1}>
-//         <img src=${pos.img3}>
-//         <img src=${pos.img4}>
-//         <img src=${pos.main_img}>
-//         </div>`
+function display(arr) {
+    
+    document.getElementById("container").innerHTML = "";
+    arr.forEach(([id, post]) => {
+        post.forEach((pos) => {
+            let card = document.createElement("div");
+            card.innerHTML = `
+            <div id="images">
+            <img src=${pos.main_img} class="img-fluid">
+            </div>
+            <h2 class="txt brandname">${pos.brand}</h2>
+            <h6 class="txt">Price: ${pos.amount}</h6>
+            <p class="txt">Category: ${pos.category}</p>
+            <p class="txt">Availability: ${pos.availability}</p>
+            <p class="txt">Product code: ${pos.product_code}</p>
+            <div class="action-buttons">
+            <button class="add-to-cart" title="Add to Cart"><i class="fas fa-cart-plus"></i></button>
+            <button title="Remove"><i class="fas fa-trash-alt"></i></button>
+            <button title="Like"><i class="fas fa-heart"></i></button>
+            </div>
+        `
 
-//             document.getElementById("container").append(card)
-//         })
+            // console.log("display: ",card)
+            let addToCartBtn = card.querySelector(".add-to-cart");
+            addToCartBtn.addEventListener("click", () => addToCart(pos));
 
-//     });
+            document.getElementById("container").append(card);
+        })
 
-// }
+    });
+
+}
+
+
+function addToCart(product) {
+    let existingProduct = cart.find(item => item.product_code === product.product_code);
+    
+    if (existingProduct) {
+        existingProduct.quantity += 1; // Increase quantity if item exists
+    } else {
+        product.quantity = 1;
+        cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    cart.push(product);
+    console.log("Cart:", cart);
+    alert(`${product.brand} added to cart!`);
+    updateCart();
+}
+   
+function gotoproducts(){
+    window.location.href = `../sort/sort.html`
+}

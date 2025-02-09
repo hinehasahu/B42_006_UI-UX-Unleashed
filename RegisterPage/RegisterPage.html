@@ -8,6 +8,8 @@
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="RegisterPage.css">
+    <link rel="stylesheet" href="../accountPage/Account/account.css">
+    <link rel="stylesheet" href="../Footer/footer.css">
     
 </head>
 <body>
@@ -50,48 +52,97 @@
     </header>
 
     <!-- Register Section -->
-    <div class="container">
-        <div class="header">📝 Register Account</div>
+    <main>
+        <div class="container">
+            <div class="header">📝 Register Account</div>
 
-        <div class="info-box">
-            <p><i class="fas fa-user"></i> <strong>Already have an account?</strong> <a href="login.html">Login here</a></p>
+            <div class="info-box">
+                <p><i class="fas fa-user"></i> <strong>Already have an account?</strong> <a href="login.html">Login here</a></p>
+            </div>
+
+            <form id="registerForm" action="#" method="post">
+                <div class="form-group">
+                    <label for="firstName">* First Name</label>
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">* Last Name</label>
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">* E-Mail</label>
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">* Password</label>
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="newsletter" id="newsletter"> Subscribe to Newsletter
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="privacyPolicy" id="privacyPolicy" required> I have read and agree to the Privacy Policy
+                    </label>
+                </div>
+                <button type="submit" class="submit-btn"><i class="fas fa-user-plus"></i> Register</button>
+            </form>
         </div>
+        <div id="ryt">
+            <div><a href="../Login/login.html">Login</a></div>
+            <div><a href="../RegisterPage/RegisterPage.html">Register</a></div>
+            <div>Forgotten Password</div>
+            <div><a href="../accountPage/Account/account.html">My Account</a></div>
+            <div>Address Book</div>
+            <div>Wish List</div>
+            <div>Order History</div>
+            <div>Downloads</div>
+            <div>Subscriptions</div>
+            <div>Reward Points</div>
+            <div>Returns</div>
+            <div>Transactions</div>
+            <div>Newsletter</div>
+        </div>
+    </main>
 
-        <form id="registerForm" action="#" method="post">
-            <div class="form-group">
-                <label for="firstName">* First Name</label>
-                <i class="fas fa-user input-icon"></i>
-                <input type="text" id="firstName" name="firstName" required>
-            </div>
-            <div class="form-group">
-                <label for="lastName">* Last Name</label>
-                <i class="fas fa-user input-icon"></i>
-                <input type="text" id="lastName" name="lastName" required>
-            </div>
-            <div class="form-group">
-                <label for="email">* E-Mail</label>
-                <i class="fas fa-envelope input-icon"></i>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">* Password</label>
-                <i class="fas fa-lock input-icon"></i>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <label>
-                    <input type="checkbox" name="newsletter" id="newsletter"> Subscribe to Newsletter
-                </label>
-            </div>
-            <div class="form-group">
-                <label>
-                    <input type="checkbox" name="privacyPolicy" id="privacyPolicy" required> I have read and agree to the Privacy Policy
-                </label>
-            </div>
-            <button type="submit" class="submit-btn"><i class="fas fa-user-plus"></i> Register</button>
-        </form>
-    </div>
+    <footer>
+        <main id="ftbdy">
+            <div class="th">Information</div>
+            <div class="th">Customer Service</div>
+            <div class="th">Extras</div>
+            <div class="th">My Account</div>
 
+            <div class="td">Terms & Conditions</div>
+            <div class="td">Contact Us</div>
+            <div class="td">Brands</div>
+            <div class="td">My Account</div>
+
+            <div class="td">Delivery Information</div>
+            <div class="td">Returns</div>
+            <div class="td">Gift Certificates</div>
+            <div class="td">Order History</div>
+
+            <div class="td">About Us</div>
+            <div class="td">Site Map</div>
+            <div class="td">Affiliate</div>
+            <div class="td">Wish List</div>
+
+            <div class="td">Privacy Policy</div>
+            <div class="td"></div>
+            <div class="td">Specials</div>
+            <div class="td">Newsletter</div>
+        </main>
+        <hr>
+        <div id="cpryt">
+            <p>Powered By grp-06 <br> B-42 Store © 2025</p>
+        </div>
+    </footer>
     <script>
         document.getElementById("registerForm").addEventListener("submit", function(event) {
             event.preventDefault();
@@ -111,5 +162,7 @@
             window.location.href = "WelcomePage.html?name=" + encodeURIComponent(firstName);
         });
     </script>
+    <script src="../accountPage/Account/account.js"></script>
 </body>
 </html>
+<script src="../Navbar/nav.js"></script>

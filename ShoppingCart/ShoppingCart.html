@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="ShoppingCart.css">
+    <link rel="stylesheet" href="../Navbar/nav.css">
+    <link rel="stylesheet" href="../Footer/footer.css">
+</head>
+<body>
+<nav>
+    <header>
+        <div class="top-bar">
+            <span class="currency"> ₹<span id="currency"></span> Currency</span>
+            <span class="contact">📞 6360639208</span>
+            <span class="account">👤 My Account</span>
+            <span class="wishlist">❤️ Wish List</span>
+            <span class="cart">🛒 Shopping Cart</span>
+            <span class="checkout">↗ Checkout</span>
+        </div>
+        
+        <div class="main-nav">
+            <div class="logo">
+                <img src="https://demo.opencart.com/image/catalog/opencart-logo.png" alt="Opencart Logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>🔍</button>
+            </div>
+            <div class="cart-summary">
+                <button>🛒 <span id="items"></span> item(s)</button>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Desktops</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Components</a></li>
+                <li><a href="#">Tablets</a></li>
+                <li><a href="#">Software</a></li>
+                <li><a href="#">Phones</a></li>
+                <li><a href="#">Cameras</a></li>
+                <li><a href="#">MP3 Players</a></li>
+            </ul>
+        </nav>
+    </header>
+</nav>
+
+<div class="cart-container">
+    <h2>Shopping Cart <!--<span>Total Wei: <span id="total-weight">0</span> kg</span>--></h2>
+    
+    <table id="tablebox">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Model</th>
+                <th>Quantity</th>
+                <!-- <th>Weight (kg)</th> -->
+                <th>Unit Price</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <!-- <tbody id="cart-body">
+            <tr class="cart-item" data-id="1">
+                <td><img src="camera.jpg" width="50"></td>
+                <td>Product 1</td>
+                <td>Model A</td>
+                <td class="quantity"><input type="number" value="1" min="1"></td>
+                <td class="weight">2</td>
+                <td class="unit-price">500</td>
+                <td class="total-price">500</td>
+                <td><button class="remove-btn">Remove</button></td>
+            </tr>
+            <tr class="cart-item" data-id="2">
+                <td><img src="iphone.jpg" width="50"></td>
+                <td>Product 2</td>
+                <td>Model B</td>
+                <td class="quantity"><input type="number" value="2" min="1"></td>
+                <td class="weight">1</td>
+                <td class="unit-price">300</td>
+                <td class="total-price">600</td>
+                <td><button class="remove-btn">Remove</button></td>
+            </tr>
+        </tbody> -->
+    </table>
+
+    <div class="summary">
+        <div>Subtotal: <span id="subtotal">0</span></div>
+        <div>Tax (10%): <span id="tax">0</span></div>
+        <div>VAT (5%): <span id="vat">0</span></div>
+        <div><strong>Final Total: <span id="final-total">0</span></strong></div>
+    </div>
+
+    <div class="section">
+        <h4>Choose Shipping way</h4>
+        <select id="shipping-dropdown">
+            <option value="none">Select Shipping & Taxes</option>
+        </select>
+    </div>
+
+    <div class="section">
+        <input type="text" id="coupon-code" placeholder="Enter Coupon Code">
+        <select id="coupon-dropdown">
+            <option value="none">Available Coupons</option>
+        </select>
+    </div>
+
+    <div class="section">
+        <input type="text" id="gift-card-code" placeholder="Enter Gift Card">
+        <select id="gift-dropdown">
+            <option value="none">Available Gift Cards</option>
+        </select>
+    </div>
+
+    <div class="btn-container">
+        <button class="btn continue-btn" onclick="continueShopping()">Continue Shopping</button>
+        <button class="btn checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+</div>
+
+<footer>
+    <main id="ftbdy">
+        <div class="th">Information</div>
+        <div class="th">Customer Service</div>
+        <div class="th">Extras</div>
+        <div class="th">My Account</div>
+
+        <div class="td">Terms & Conditions</div>
+        <div class="td">Contact Us</div>
+        <div class="td">Brands</div>
+        <div class="td">My Account</div>
+
+        <div class="td">Delivery Information</div>
+        <div class="td">Returns</div>
+        <div class="td">Gift Certificates</div>
+        <div class="td">Order History</div>
+
+        <div class="td">About Us</div>
+        <div class="td">Site Map</div>
+        <div class="td">Affiliate</div>
+        <div class="td">Wish List</div>
+
+        <div class="td">Privacy Policy</div>
+        <div class="td"></div>
+        <div class="td">Specials</div>
+        <div class="td">Newsletter</div>
+    </main>
+    <hr>
+    <div id="cpryt">
+        <p>Powered By grp-06 <br> B-42 Store © 2025</p>
+    </div>
+</footer>
+<script src="ShoppingCart.js"></script>
+<script src="../Navbar/nav.js"></script>
+<script src="../sort/sort.js"></script>
+
+</body>
+</html>
