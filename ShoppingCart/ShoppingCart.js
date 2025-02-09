@@ -110,10 +110,10 @@
     //     window.location.href = "checkout.html";
     // }
 
-    // function continueShopping() {
-    //     alert("Continuing shopping...");
-    //     window.location.href = "../Sort/sort.html";
-    // }
+    function continueShopping() {
+        alert("Continuing shopping...");
+        window.location.href = "../LandingPage/HomePage.html";
+    }
 
     // populateDropdowns();
     // updateCart();
@@ -214,11 +214,6 @@ document.addEventListener("click", function (event) {
         removeItem(index);
     }
 });
-
-// Function to continue shopping
-function continueShopping() {
-    window.location.href = "index.html"; // Change this to your main shopping page
-}
 
 // Function to proceed to checkout
 function checkout() {
