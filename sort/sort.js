@@ -39,13 +39,12 @@ function searchItems() {
         // console.log(searchedItems.length)
         
     });
-
     setTimeout(()=>{
         if(searchedItems.length<1){
             alert("No Data Found")
         }
     },2000)
-    
+ 
     // console.log(searchedItems)
     displaySorted(searchedItems);
 }
