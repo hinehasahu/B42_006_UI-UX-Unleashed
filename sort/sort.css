@@ -33,17 +33,19 @@
     gap: 2rem;
     /* height: 100vh; */
 }
-#images{
+/* #images{
     width: 80%;
 }
 #images>img{
     width: 100%;
-}
+
+} */
 #container>div p{
     font-size: small;
 }
 .brandname{
     color: #17a2b7;
+    padding-bottom:0px;
 }
 #container>div{
     display: flex;
@@ -93,4 +95,39 @@
 
 .action-buttons button:hover {
     background-color: #17a2b7;
+}
+
+#mainimg{
+    width: 200px;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 20px;
+}
+
+#mainimg:hover{
+    transform: scale(1.2);
+}
+
+#images {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+#images img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease-in-out;
+}
+
+#images img:hover {
+    transform: scale(1.2);
+}
+
+.stars{
+    margin-bottom: 0px;
 }
